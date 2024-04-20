@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        <div class="bg-white shadow rounded p-4 text-center">
+            <h1 class="text-2xl font-bold">Oops!</h1>
+            <p class="text-lg">The page you are looking for could not be found.</p>
+            <a href="{{ url_for('index') }}" class="text-blue-500">Go Back Home</a>
+        </div>
+{% endblock %}
