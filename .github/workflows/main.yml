@@ -4,23 +4,16 @@ on:
   pull_request:
 
 jobs:
-  pre-commit:
+  main:
     runs-on: ubuntu-latest
-    container:
-      image: python:latest
-
     steps:
-    - name: Check out code
-      uses: actions/checkout@v3
-
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
     - name: Install pre-commit
       run: python3 -m pip install pre-commit
-      
     - name: List directory
       run: ls -la
-
     - name: print working directory
       run: pwd
-  
     - name: Run pre-commit
       run: pre-commit run --all-files
