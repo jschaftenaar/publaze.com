@@ -9,11 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements.txt
     - name: Install pre-commit
-      run: python3 -m pip install pre-commit
-    - name: List directory
-      run: ls -la
-    - name: print working directory
-      run: pwd
+      run: pip install pre-commit
     - name: Run pre-commit
       run: pre-commit run --all-files
