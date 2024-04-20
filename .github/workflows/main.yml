@@ -15,6 +15,13 @@ jobs:
 
     - name: Install pre-commit
       run: pip install pre-commit
+      
+    - name: List directory
+      run: ls -la
 
+    - name: print working directory
+      run: pwd
+  
     - name: Run pre-commit
       run: pre-commit run --all-files
+      working-directory: /github/workspace
