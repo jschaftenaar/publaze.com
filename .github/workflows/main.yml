@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Install pre-commit
-      run: pip install pre-commit
+      run: python3 -m pip install pre-commit
       
     - name: List directory
       run: ls -la
@@ -24,4 +24,3 @@ jobs:
   
     - name: Run pre-commit
       run: pre-commit run --all-files
-      working-directory: /github/workspace
