@@ -1,15 +1,14 @@
-{% extends "layout.html" %}
-
-{% block content %}
-        <h1 class="text-2xl font-bold text-center my-4">{{ video.snippet.title }}</h1>
-        <div class="bg-white shadow rounded p-4">
-            <div class="video-container my-4">
-                    <!-- Embedding YouTube video -->
-                    <div class="w-full h-full">                
-                <!-- Embedding YouTube video -->
-                {{ video.player.embedHtml|safe }}
-            </div>
-            </div>
-            <p>{{ video.snippet.description }}</p>
-        </div>
+{% extends "layout.html" %} {% block content %}
+<h1 class="text-2xl font-bold text-center my-4">
+  {{ video.snippet.title | safe }}
+</h1>
+<div class="bg-white shadow rounded p-4">
+  <div class="video-container my-4">
+    <div class="w-full h-full">{{ video.player.embedHtml|safe }}</div>
+  </div>
+  <p>{{ video.snippet.description | replace('\n', '<br />') | safe }}</p>
+</div>
+<div class="bg-white shadow rounded p-4">
+  <pre>{{ channel }}</pre>
+</div>
 {% endblock %}

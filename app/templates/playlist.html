@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block content %}
+<br />
+<nav class="bg-white shadow-md p-4">
+  <ol class="list-reset flex text-gray-700">
+    <li>
+      <a href="/playlists" class="text-blue-500 hover:text-blue-700"
+        >Playlists</a
+      >
+    </li>
+    <li>
+      <span class="mx-2">/</span>
+      <span class="text-gray-400">{{ playlist.snippet.title | safe }}</span>
+    </li>
+  </ol>
+</nav>
+<h1 class="text-2xl font-bold text-center my-4">
+  {{ playlist.snippet.title | safe }}
+</h1>
+<div class="grid grid-cols-3 gap-4">
+  {% for video in playlist_videos %} {% if video.snippet.thumbnails %}
+  <div class="bg-white shadow rounded p-4">
+    <a
+      href="{{ url_for('playlist_video', playlist_id=playlist.id, video_id=video.snippet.resourceId.videoId ) }}"
+    >
+      <picture>
+        <source
+          srcset="{{ video.snippet.thumbnails.high.url }}"
+          media="(min-width: 800px)"
+        />
+        <source srcset="{{ video.snippet.thumbnails.default.url }}" />
+        <img
+          src="{{ video.snippet.thumbnails.default.url }}"
+          alt="Video Thumbnail"
+          class="w-full"
+        />
+      </picture>
+      <p class="font-semibold mt-2">{{ video.snippet.title | safe }}</p>
+    </a>
+  </div>
+  {% endif %} {% endfor %}
+</div>
+{% endblock %}
