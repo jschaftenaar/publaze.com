@@ -1,15 +1,17 @@
-{% extends "layout.html" %}
-
-{% block content %}
-        <h2 class="text-xl font-bold text-center my-4">Shorts</h2>
-        <div class="grid grid-cols-3 gap-4">
-            {% for video in shorts %}
-            <div class="bg-white shadow rounded p-4">
-                <a href="{{ url_for('video', video_id=video.id.videoId) }}">
-                    <img src="{{ video.snippet.thumbnails.default.url }}" alt="Video Thumbnail" class="w-full">
-                    <p class="font-semibold mt-2">{{ video.snippet.title }}</p>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
+{% extends "layout.html" %} {% block content %}
+<h2 class="text-xl font-bold text-center my-4">Shorts</h2>
+<div class="grid grid-cols-3 gap-4">
+  {% for video in shorts %}
+  <div class="bg-white shadow rounded p-4">
+    <a href="{{ url_for('video', video_id=video.id.videoId) }}">
+      <img
+        src="{{ video.snippet.thumbnails.default.url }}"
+        alt="Video Thumbnail"
+        class="w-full"
+      />
+      <p class="font-semibold mt-2">{{ video.snippet.title }}</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
