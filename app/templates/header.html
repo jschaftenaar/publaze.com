@@ -6,6 +6,12 @@
       <span
         class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
       >
+      <img
+      src="{{ channel.snippet.thumbnails.default.url }}"
+      alt="Logo"
+      class="inline align-middle"
+      style="max-height:30px"
+      />
         {{ channel.snippet.title }}
       </span>
     </a>
@@ -75,6 +81,7 @@
             About
           </a>
         </li>
+{% if configuration.discord and configuration.discord.invite_link %}
         <li>
           <a
             href="/discord"
@@ -88,6 +95,7 @@
             Discord
           </a>
         </li>
+{% endif %}
       </ul>
     </div>
   </div>

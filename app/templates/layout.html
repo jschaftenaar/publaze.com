@@ -6,6 +6,11 @@
     <title>{{ channel.snippet.title | safe }}</title>
     <meta name="title" content="{{ channel.snippet.title | e }}" />
     <meta name="description" content="{{ channel.snippet.description | e }}" />
+    <link
+      rel="icon"
+      href="{{ channel.snippet.thumbnails.default.url }}"
+      type="image/png"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ request.url_root }}" />
     <meta property="og:title" content="{{ channel.snippet.title | e }}" />
@@ -13,7 +18,10 @@
       property="og:description"
       content="{{ channel.snippet.description | e }}"
     />
-    <meta property="og:image" content="{{ request.url_root }}static/logo.png" />
+    <meta
+      property="og:image"
+      content="{{ channel.snippet.thumbnails.medium.url }}"
+    />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="{{ request.url_root }}" />
     <meta property="twitter:title" content="{{ channel.snippet.title | e }}" />
@@ -23,7 +31,7 @@
     />
     <meta
       property="twitter:image"
-      content="{{ request.url_root }}static/logo.png"
+      content="{{ channel.snippet.thumbnails.medium.url }}"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"

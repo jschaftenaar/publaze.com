@@ -1,6 +1,5 @@
 ---
 name: Pre-commit
-
 on:
   - pull_request
 jobs:

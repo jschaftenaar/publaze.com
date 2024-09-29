@@ -1,11 +1,14 @@
-{% extends "layout.html" %} {% block content %}
-<h1 class="text-2xl font-bold text-center my-4">Join our discord Channel</h1>
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="text-2xl font-bold text-center my-4">
+  Join the {{ channel.snippet.title | safe }} Discord Channel
+</h1>
 <div class="bg-white shadow rounded p-8 text-center">
   <a
     href="{{ configuration.discord.invite_link }}"
     class="text-white bg-green-500 hover:bg-green-600 font-bold py-4 px-8 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out mt-4 mb-4"
   >
-    Join Our Discord
+    Join
   </a>
 </div>
 {% endblock %}

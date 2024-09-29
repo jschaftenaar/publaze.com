@@ -1,1 +1,17 @@
-{% extends "layout.html" %} {% block content %} Lander {% endblock %}
+{% extends "layout.html" %}
+{% block content %}
+<br />
+<div class="bg-white shadow rounded p-4 text-center">
+  <img
+    src="{{ channel.brandingSettings.image.bannerExternalUrl }}"
+    alt="Banner"
+    class="mx-auto"
+  />
+  <div class="video-container my-4">
+    <div class="w-full h-full flex items-center justify-center">
+      {{ video.player.embedHtml|safe }}
+    </div>
+  </div>
+  <p>{{ video.snippet.description | replace('\n', '<br />') | safe }}</p>
+</div>
+{% endblock %}

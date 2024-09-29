@@ -9,7 +9,7 @@ services:
     volumes:
       - ./app:/app
       - ./configuration.yaml:/app/configuration.yaml
-      #- ./cache:/app/cache
+      - ./app/cache:/app/cache
     environment:
       - FLASK_ENV=${FLASK_ENV}
       - FLASK_APP=${FLASK_APP}

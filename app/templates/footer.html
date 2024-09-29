@@ -20,6 +20,7 @@
             >
           </li>
           <li>
+            Site created using
             <a
               href="https://publaze.com"
               class="hover:text-gray-300 text-gray-500"
@@ -46,11 +47,13 @@
           <li>
             <a href="/about" class="hover:text-gray-300 text-gray-500">About</a>
           </li>
+          {% if configuration.discord and configuration.discord.invite_link %}
           <li>
             <a href="/discord" class="hover:text-gray-300 text-gray-500"
               >Discord</a
             >
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
